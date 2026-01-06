@@ -55,12 +55,12 @@ export class LabRegistryService {
    */
   getLabInfo(): ExperienceLab {
     return {
-      labId: 'active-living-lab',
-      name: 'Active Living Lab',
+      labId: 'active-living-travel',
+      name: 'Active Living Travel',
       description:
         'Agent-operated premium travel service for active retirees. ' +
         'Multi-week international trips with golf, culture, wellness integration, and health-aware scheduling.',
-      category: 'active_lifestyle',
+      category: 'premium_travel',
       targetAudience: 'Active retirees (45-75 years old)',
       serviceType: 'human_in_loop_ai_agents',
       capabilities: [
@@ -92,7 +92,7 @@ export class LabRegistryService {
           },
         ],
       },
-      mcpEndpoint: process.env.MCP_ENDPOINT || 'stdio://active-living-lab',
+      mcpEndpoint: process.env.MCP_ENDPOINT || 'stdio://active-living-travel',
       status: 'beta',
       version: '0.1.0',
     };
@@ -206,7 +206,7 @@ export class LabRegistryService {
         {
           step: 1,
           type: 'welcome',
-          title: 'Welcome to Active Living Lab',
+          title: 'Welcome to Active Living Travel',
           description:
             'Premium, agent-operated travel experiences designed for active retirees.',
           duration: '30 seconds',
@@ -352,7 +352,7 @@ export class CloudPeersPlatformIntegration {
     // Create lab activation record
     const activationId = await this.labRegistry.activateLab({
       userId: platformData.userId,
-      labId: 'active-living-lab',
+      labId: 'active-living-travel',
       activationRoute: 'cloudpeers_platform',
       userOutcome: platformData.selectedOutcome,
       selectedImportance: platformData.selectedImportance,
