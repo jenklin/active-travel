@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "slow-luxury-travel": {
+      "command": "node",
+      "args": ["dist/mcp/server.js"],
+      "env": {
+        "DATABASE_URL": "postgresql://localhost:5432/slow_luxury_travel"
+      }
+    }
+  }
+}
