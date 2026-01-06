@@ -9,7 +9,7 @@
 ### 1. Build the Project
 
 ```bash
-cd /Users/jenklin/dev/cloudpeers-mcp/slow-luxury-travel
+cd /Users/jenklin/dev/cloudpeers-mcp/active-travel
 npm run build
 ```
 

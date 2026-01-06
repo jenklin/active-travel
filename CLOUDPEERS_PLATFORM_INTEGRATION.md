@@ -342,7 +342,7 @@ NODE_ENV=production
 
 1. **Build the service**:
    ```bash
-   cd /Users/jenklin/dev/cloudpeers-mcp/slow-luxury-travel
+   cd /Users/jenklin/dev/cloudpeers-mcp/active-travel
    npm run build
    ```
 
@@ -430,7 +430,7 @@ cd /Users/jenklin/dev/cloudpeers-mcp/carepeers
 npm run dev
 
 # Terminal 2: Start Active Living Lab MCP Server
-cd /Users/jenklin/dev/cloudpeers-mcp/slow-luxury-travel
+cd /Users/jenklin/dev/cloudpeers-mcp/active-travel
 npm run dev:mcp
 
 # Terminal 3: Test activation
@@ -448,7 +448,7 @@ curl -X POST http://localhost:3000/api/platform/activate \
 
 ```bash
 # Test wellness profile fetch
-cd /Users/jenklin/dev/cloudpeers-mcp/slow-luxury-travel
+cd /Users/jenklin/dev/cloudpeers-mcp/active-travel
 npm run example:lab
 ```
 

@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "slow-luxury-travel": {
+    "active-travel": {
       "command": "node",
       "args": ["dist/mcp/server.js"],
       "env": {

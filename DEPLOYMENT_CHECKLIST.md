@@ -37,7 +37,7 @@
 
 ```bash
 # 1. Set environment variables
-cd /Users/jenklin/dev/cloudpeers-mcp/slow-luxury-travel
+cd /Users/jenklin/dev/cloudpeers-mcp/active-travel
 export DATABASE_URL=postgresql://... # Your PostgreSQL connection string
 export CAREPEERS_MCP_URL=http://localhost:3000/mcp
 export PORT=3002
@@ -154,7 +154,7 @@ curl -X POST http://localhost:3002/api/platform/activate \
 
 ```bash
 # Test wellness profile fetch from CarePeers
-cd /Users/jenklin/dev/cloudpeers-mcp/slow-luxury-travel
+cd /Users/jenklin/dev/cloudpeers-mcp/active-travel
 npm run example:lab
 
 # Should successfully connect to CarePeers and fetch wellness data

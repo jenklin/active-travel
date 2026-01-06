@@ -100,7 +100,7 @@ Added to `package.json`:
 ### 1. Install & Build
 
 ```bash
-cd /Users/jenklin/dev/cloudpeers-mcp/slow-luxury-travel
+cd /Users/jenklin/dev/cloudpeers-mcp/active-travel
 npm run build
 ```
 
@@ -470,7 +470,7 @@ const [health, golf, budget] = await Promise.all([
 ## File Structure
 
 ```
-slow-luxury-travel/
+active-travel/
 ├── src/
 │   └── client/
 │       └── slow-luxury-client.ts         ✅ SDK (~400 lines)

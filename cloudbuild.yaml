@@ -1,0 +1,31 @@
+# Active Living Lab - Cloud Build Configuration
+# Uses runtime configuration - NO build-time secrets needed!
+# Secrets are loaded at runtime from Google Cloud Secret Manager
+
+steps:
+  # Step 1: Build Docker image (no secrets needed at build time!)
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - '${_IMAGE_URI}'
+      - '.'
+
+  # Step 2: Push image to Google Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', '${_IMAGE_URI}']
+
+# Build timeout
+timeout: 1200s
+
+# Substitutions (passed from deploy script)
+substitutions:
+  _IMAGE_URI: 'gcr.io/${PROJECT_ID}/active-living-lab:latest'
+
+# Images to store in Container Registry
+images:
+  - '${_IMAGE_URI}'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: 'E2_HIGHCPU_8'

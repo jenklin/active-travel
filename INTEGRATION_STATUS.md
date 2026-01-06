@@ -10,7 +10,7 @@
 ## ✅ COMPLETED
 
 ### 1. Lab Configuration
-- ✅ Changed lab_id from `slow-luxury-travel` to `active-living-lab`
+- ✅ Changed lab_id from `active-travel` to `active-living-lab`
 - ✅ Updated target audience to "Active retirees (45-75 years old)"
 - ✅ Rebranded all code, documentation, and package.json
 - ✅ TypeScript compiled successfully (CommonJS)
@@ -86,7 +86,7 @@ const LAB_TO_SERVICE_MAPPING = {
 const MCP_SERVICE_ENDPOINTS = {
   'active-living-lab-mcp': {
     command: 'node',
-    args: ['/Users/jenklin/dev/cloudpeers-mcp/slow-luxury-travel/dist/mcp/server.js'],
+    args: ['/Users/jenklin/dev/cloudpeers-mcp/active-travel/dist/mcp/server.js'],
     env: process.env,
   },
 };
@@ -112,7 +112,7 @@ PORT=3002
 
 **Option A: Google Cloud Run**
 ```bash
-cd /Users/jenklin/dev/cloudpeers-mcp/slow-luxury-travel
+cd /Users/jenklin/dev/cloudpeers-mcp/active-travel
 
 gcloud run deploy active-living-lab \
   --source . \
@@ -219,7 +219,7 @@ All comprehensive guides available:
 
 ### Run Locally
 ```bash
-cd /Users/jenklin/dev/cloudpeers-mcp/slow-luxury-travel
+cd /Users/jenklin/dev/cloudpeers-mcp/active-travel
 
 # Install dependencies (if not done)
 npm install

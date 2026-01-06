@@ -9,7 +9,7 @@ Complete guide for using Slow Luxury Travel programmatically via the TypeScript 
 ### Installation
 
 ```bash
-cd /Users/jenklin/dev/cloudpeers-mcp/slow-luxury-travel
+cd /Users/jenklin/dev/cloudpeers-mcp/active-travel
 npm install
 npm run build
 ```

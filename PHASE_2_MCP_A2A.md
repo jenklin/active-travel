@@ -152,7 +152,7 @@ Experience Lab metadata for discovery.
 **Example response**:
 ```json
 {
-  "labId": "slow-luxury-travel",
+  "labId": "active-travel",
   "name": "Slow Luxury Travel Experience Lab",
   "category": "travel_wellness",
   "targetAudience": "50-65 year old professionals",
@@ -193,9 +193,9 @@ Add to Claude Desktop config (`~/Library/Application Support/Claude/claude_deskt
 ```json
 {
   "mcpServers": {
-    "slow-luxury-travel": {
+    "active-travel": {
       "command": "node",
-      "args": ["/path/to/slow-luxury-travel/dist/mcp/server.js"]
+      "args": ["/path/to/active-travel/dist/mcp/server.js"]
     }
   }
 }
@@ -378,7 +378,7 @@ The manifest is auto-generated and includes:
   "version": "1.0",
   "type": "experience_lab",
   "lab": {
-    "labId": "slow-luxury-travel",
+    "labId": "active-travel",
     "name": "Slow Luxury Travel Experience Lab",
     "category": "travel_wellness",
     ...
@@ -429,7 +429,7 @@ The manifest is auto-generated and includes:
    ```typescript
    const activation = await labRegistry.activateLab({
      userId: 'user_123',
-     labId: 'slow-luxury-travel',
+     labId: 'active-travel',
      activationRoute: 'cloudpeers_platform',
      userOutcome: 'multi_week_asia',
      selectedImportance: 3,
@@ -494,7 +494,7 @@ curl http://localhost:3002/api/lab/manifest
 DATABASE_URL=postgresql://user:pass@host:5432/slow_luxury_travel
 
 # MCP Server
-MCP_ENDPOINT=stdio://slow-luxury-travel
+MCP_ENDPOINT=stdio://active-travel
 
 # CarePeers A2A
 CAREPEERS_MCP_COMMAND=node
@@ -512,7 +512,7 @@ CLOUDPEERS_API_KEY=secret_key
 version: '3.8'
 
 services:
-  slow-luxury-travel:
+  active-travel:
     build: .
     environment:
       - DATABASE_URL=postgresql://postgres:postgres@db:5432/slow_luxury_travel
@@ -540,7 +540,7 @@ volumes:
 
 ```bash
 # Build and deploy
-gcloud run deploy slow-luxury-travel \
+gcloud run deploy active-travel \
   --source . \
   --region us-central1 \
   --set-env-vars DATABASE_URL=$DATABASE_URL \
@@ -555,7 +555,7 @@ gcloud run deploy slow-luxury-travel \
 
 ```typescript
 // From Claude Desktop or another MCP client
-const result = await callTool('slow-luxury-travel', 'analyze_daily_itinerary', {
+const result = await callTool('active-travel', 'analyze_daily_itinerary', {
   tripId: 'trip_123',
   userId: 'user_123',
   date: '2026-02-20',

@@ -80,7 +80,7 @@ Slow Luxury Travel has been transformed from a standalone service into a **fully
 ## File Inventory
 
 ```
-slow-luxury-travel/
+active-travel/
 ├── package.json                      ✅ Updated with pg, mcp scripts
 ├── tsconfig.json                     ✅ ES2022, strict mode
 ├── .env                              ✅ Environment configuration
@@ -254,9 +254,9 @@ Full relational schema:
 ```json
 {
   "mcpServers": {
-    "slow-luxury-travel": {
+    "active-travel": {
       "command": "node",
-      "args": ["/path/to/slow-luxury-travel/dist/mcp/server.js"],
+      "args": ["/path/to/active-travel/dist/mcp/server.js"],
       "env": {
         "DATABASE_URL": "postgresql://localhost:5432/slow_luxury_travel"
       }
@@ -269,7 +269,7 @@ Full relational schema:
 
 **3. Ask Claude**:
 ```
-Analyze this day's itinerary using slow-luxury-travel:
+Analyze this day's itinerary using active-travel:
 - Location: Da Nang, Vietnam
 - Activity: Golf at Montgomerie Links
 - My energy: 3/5
@@ -279,7 +279,7 @@ Analyze this day's itinerary using slow-luxury-travel:
 
 **4. Claude invokes**:
 ```
-slow-luxury-travel.analyze_daily_itinerary(...)
+active-travel.analyze_daily_itinerary(...)
 ```
 
 **5. Response**:
@@ -343,7 +343,7 @@ const trip = await createTrip({
 
 **1. Platform routes user**:
 ```http
-POST https://slow-luxury-travel.com/api/lab/activate
+POST https://active-travel.com/api/lab/activate
 {
   "userId": "user_123",
   "sessionId": "session_abc",
@@ -357,7 +357,7 @@ POST https://slow-luxury-travel.com/api/lab/activate
 ```typescript
 const activation = await labRegistry.activateLab({
   userId: 'user_123',
-  labId: 'slow-luxury-travel',
+  labId: 'active-travel',
   activationRoute: 'cloudpeers_platform',
   userOutcome: 'multi_week_asia',
   selectedImportance: 4,

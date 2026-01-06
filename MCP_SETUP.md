@@ -15,7 +15,7 @@ This guide shows how to:
 ### Install Dependencies
 
 ```bash
-cd /Users/jenklin/dev/cloudpeers-mcp/slow-luxury-travel
+cd /Users/jenklin/dev/cloudpeers-mcp/active-travel
 npm install
 npm run build
 ```
@@ -94,10 +94,10 @@ Edit the config file:
 ```json
 {
   "mcpServers": {
-    "slow-luxury-travel": {
+    "active-travel": {
       "command": "node",
       "args": [
-        "/Users/jenklin/dev/cloudpeers-mcp/slow-luxury-travel/dist/mcp/server.js"
+        "/Users/jenklin/dev/cloudpeers-mcp/active-travel/dist/mcp/server.js"
       ],
       "env": {
         "DATABASE_URL": "postgresql://localhost:5432/slow_luxury_travel"
@@ -118,7 +118,7 @@ Quit and reopen Claude Desktop. The Slow Luxury Travel tools should appear in th
 Ask Claude:
 
 ```
-Can you list the tools available from slow-luxury-travel?
+Can you list the tools available from active-travel?
 ```
 
 Claude should respond with the 7 available tools:
@@ -133,7 +133,7 @@ Claude should respond with the 7 available tools:
 ### Step 5: Create a Test Trip
 
 ```
-Use slow-luxury-travel to create a trip:
+Use active-travel to create a trip:
 - Name: "Vietnam Golf Adventure"
 - Start: 2026-02-16
 - End: 2026-03-26
@@ -161,10 +161,10 @@ Claude will invoke the `create_trip` tool via MCP.
         "DATABASE_URL": "postgresql://localhost:5432/carepeers"
       }
     },
-    "slow-luxury-travel": {
+    "active-travel": {
       "command": "node",
       "args": [
-        "/Users/jenklin/dev/cloudpeers-mcp/slow-luxury-travel/dist/mcp/server.js"
+        "/Users/jenklin/dev/cloudpeers-mcp/active-travel/dist/mcp/server.js"
       ],
       "env": {
         "DATABASE_URL": "postgresql://localhost:5432/slow_luxury_travel",
@@ -185,15 +185,15 @@ Now Claude has access to **both** services and can:
 
 ```
 1. Get my wellness profile from carepeers (user_123)
-2. Use slow-luxury-travel to plan a 2-week trip to Vietnam
+2. Use active-travel to plan a 2-week trip to Vietnam
 3. Make sure the trip respects my wellness constraints
    (sleep quality, energy levels, mobility)
 ```
 
 Claude will:
 1. Call `carepeers.get_wellness_profile`
-2. Call `slow-luxury-travel.create_trip` with wellness data
-3. Call `slow-luxury-travel.health_recovery_analysis` to validate
+2. Call `active-travel.create_trip` with wellness data
+3. Call `active-travel.health_recovery_analysis` to validate
 
 **This is A2A (Agent-to-Agent) communication in action.**
 
@@ -216,7 +216,7 @@ const client = new Client(
 // Connect to Slow Luxury Travel
 const transport = new StdioClientTransport({
   command: 'node',
-  args: ['/path/to/slow-luxury-travel/dist/mcp/server.js'],
+  args: ['/path/to/active-travel/dist/mcp/server.js'],
   env: {
     DATABASE_URL: 'postgresql://localhost:5432/slow_luxury_travel',
   },
@@ -562,7 +562,7 @@ await server.connect(transport);
 
 Clients can connect via:
 ```
-wss://slow-luxury-travel.com/mcp
+wss://active-travel.com/mcp
 ```
 
 ---

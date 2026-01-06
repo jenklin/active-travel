@@ -59,9 +59,9 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 ```json
 {
   "mcpServers": {
-    "slow-luxury-travel": {
+    "active-travel": {
       "command": "node",
-      "args": ["/full/path/to/slow-luxury-travel/dist/mcp/server.js"],
+      "args": ["/full/path/to/active-travel/dist/mcp/server.js"],
       "env": {
         "DATABASE_URL": "postgresql://localhost:5432/slow_luxury_travel"
       }

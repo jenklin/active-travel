@@ -33,7 +33,7 @@ export class A2ABridge {
 
       const client = new Client(
         {
-          name: 'slow-luxury-travel-client',
+          name: 'active-travel-client',
           version: '0.1.0',
         },
         {

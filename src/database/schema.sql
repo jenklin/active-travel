@@ -1,4 +1,4 @@
--- Slow Luxury Travel Database Schema
+-- Active Travel Database Schema
 -- PostgreSQL schema for trip management and agent decisions
 
 -- Enable UUID extension
@@ -327,7 +327,7 @@ CREATE TABLE travel_preferences (
 CREATE TABLE lab_activations (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   user_id VARCHAR(255) NOT NULL,
-  lab_id VARCHAR(255) NOT NULL DEFAULT 'slow-luxury-travel',
+  lab_id VARCHAR(255) NOT NULL DEFAULT 'active-living-lab',
 
   -- Activation details
   activated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),

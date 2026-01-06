@@ -89,7 +89,7 @@ The service integrates with **CarePeers Experience Lab** via Model Context Proto
 ## Project Structure
 
 ```
-slow-luxury-travel/
+active-travel/
 ├── src/
 │   ├── agents/                    # AI agent implementations
 │   │   ├── base-agent.ts          # Base class for all agents
@@ -126,7 +126,7 @@ slow-luxury-travel/
 
 ```bash
 # Navigate to project directory
-cd slow-luxury-travel
+cd active-travel
 
 # Install dependencies
 npm install

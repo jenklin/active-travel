@@ -38,7 +38,7 @@ export class SlowLuxuryTravelMCPServer {
   constructor() {
     this.server = new Server(
       {
-        name: 'slow-luxury-travel',
+        name: 'active-travel',
         version: '0.1.0',
       },
       {
@@ -296,7 +296,7 @@ export class SlowLuxuryTravelMCPServer {
               mimeType: 'application/json',
               text: JSON.stringify(
                 {
-                  labId: 'slow-luxury-travel',
+                  labId: 'active-travel',
                   name: 'Slow Luxury Travel Experience Lab',
                   description:
                     'Agent-operated premium travel service with wellness integration. ' +

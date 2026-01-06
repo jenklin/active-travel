@@ -328,14 +328,14 @@ CMD ["node", "dist/index.js"]
 ### Google Cloud Run (Target)
 - Auto-scaling 0-10 instances
 - 1GB memory / 2 vCPU
-- Deploy via: `gcloud run deploy slow-luxury-travel --source .`
+- Deploy via: `gcloud run deploy active-travel --source .`
 
 ---
 
 ## Files Created
 
 ```
-slow-luxury-travel/
+active-travel/
 ├── package.json              # Dependencies and scripts
 ├── tsconfig.json             # TypeScript config (strict mode)
 ├── .gitignore                # Git ignore rules
