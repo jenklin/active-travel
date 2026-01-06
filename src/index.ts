@@ -47,6 +47,41 @@ const travelAgent = new TravelExperienceAgent();
 app.use('/api/platform', createPlatformRouter(databaseUrl));
 
 /**
+ * Root welcome page
+ */
+app.get('/', (req, res) => {
+  res.json({
+    service: 'Active Living Lab',
+    version: '0.1.0',
+    description: 'Agent-operated premium travel service for active retirees',
+    status: 'online',
+    endpoints: {
+      health: '/health',
+      platform: {
+        info: '/api/platform/lab/info',
+        capabilities: '/api/platform/lab/capabilities',
+        manifest: '/api/platform/lab/manifest',
+        onboarding: '/api/platform/lab/onboarding',
+        activate: 'POST /api/platform/activate',
+        reportMilestone: 'POST /api/platform/report-milestone',
+      },
+      travel: {
+        wellness: '/api/wellness/:userId',
+        analyzeDay: 'POST /api/analyze-day',
+        wellnessLog: 'POST /api/wellness/:userId/log',
+        activityRecommendations: '/api/wellness/:userId/activity-recommendations/:type',
+      },
+    },
+    integration: {
+      cloudPeersPlatform: process.env.CLOUDPEERS_PLATFORM_URL || 'Not configured',
+      carePeersMCP: process.env.CAREPEERS_MCP_URL || 'http://localhost:3001/mcp',
+      database: pool ? 'Connected' : 'Not configured',
+    },
+    documentation: 'https://github.com/cloudpeers/active-living-lab',
+  });
+});
+
+/**
  * Health check endpoint
  */
 app.get('/health', (req, res) => {

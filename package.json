@@ -9,6 +9,8 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "start:mcp": "node dist/mcp/server.js",
+    "deploy:staging": "./deploy.sh staging",
+    "deploy:prod": "./deploy.sh prod",
     "db:migrate": "psql $DATABASE_URL -f src/database/schema.sql",
     "test": "jest",
     "example:health": "tsx examples/01-basic-health-check.ts",
